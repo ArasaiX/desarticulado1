@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Hace saber al navegador que la página esta en castellano -->
+<html lang="es">
+	<!--Configuraciones-->
+	<head>
+			<!-- Permite carácteres extraños del alfabeto americano: ñ, á, é... -->
+			<meta charset="utf-8">
+			<!--Título que aparecerá en la pestaña - La estructura será el nombre de la página actual + Descripción del sitio-->
+			<title>Coitus Plasticus</title>
+			<!-- Icono que acompañará al title. También será el icono que se guardará a la hora de que hagan un marcador. Se recomienda un tamaño de 32x32 y en PNG	-->
+			<link rel="icon" type="image/png" href="favicon.png">
+			<!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en general -->
+			<meta name="theme-color" content="#3c790a">
+            <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo claro -->
+			<meta name="theme-color" 
+			      content="#ecd96f" 
+			      media="(prefers-color-scheme: light)">
+			<!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo oscuro -->
+			<meta name="theme-color" 
+			      content="#0b3e05" 
+			      media="(prefers-color-scheme: dark)">
+			
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+			<!-- Declara palabras claves -->
+			<meta name="keywords" content="html, css, javascript">
+			<!-- Declara la descripción de la web. Es utilizado por los motores de busqueda para la previa -->
+			<meta name="description" content="Desarticulado. Página web del escritor Xavi Fernández">
+			<!-- Open Graph y Twitter card: Declara como se mostrará la previa del enlace si es compartida por Facebook o alguna otra red social -->
+			<meta property="og:image" content="img/miniatura.png"> <!-- FLATA MINIATURA-->
+			<meta property="og:title" content="Desarticulado">
+			<!-- website, video, audio, article, book o profile -->
+			<meta property="og:type" content="website">
+			<meta property="og:url" content=""> <!-- ???  -->
+			<!-- Open Graph Imagen completa (Opcional) -->
+			<meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg">
+			<meta property="og:image:type" content="image/jpeg">
+			<meta property="og:image:width" content="400">
+			<meta property="og:image:height" content="300">
+			<meta property="og:image:alt" content="A shiny red apple with a bite taken out">
+			<!-- Normalizador normalize.css: Equilibra los estilos entre los Navegadores -->
+			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+			<!-- Normalizador symbiosis.css: Arregla problemas en versiones de Smartphone -->
+			<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/sapps-studio/symbiosis-css/symbiosis.min.css">
+			<!-- Tus archivos CSS -->
+			<link rel="stylesheet" type="text/css" href="styles.css">
+
+		</head>	
+	<!--Contenido de la web-->
+	<body>
+        <style>
+            body {
+                background-color: #DE118EFF;
+            }
+            h1{
+                color: black;
+            }
+        </style>
+        <nav class="main-nav">
+            <div id="toggle-menu" class="toggle-menu">
+                <img src="images/menu-icon.png" alt="" />
+            </div>
+            <ul id="main-menu" class="main-menu">
+                <li class="main-menu-logo">
+                    <img src="images/logo.gif" alt="logo">
+                </li>
+                <li class="main-menu_item"></li>
+                <li class="main-menu_item"></li>
+                <li class="main-menu_item">
+                    <a href="#" class="main-menu_link">Random</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="#" class="main-menu_link">Coitus Plasticus</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="relatos.html" class="main-menu_link">Relatos</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="#" class="main-menu_link">Erótica Porno</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="#" class="main-menu_link">Dentro de mi cabeza</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="#" class="main-menu_link">Dibujos</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="index.html" class="main-menu_link">Inicio</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="main">
+            <div id="title" class="title">
+                <h1>
+                    RELATOS
+                </h1>
+                <ul id="relatos" class="relatos">
+                    <li class="relatos-item">
+                        <a href="bosque-cenizas.html" class="relatos-link">El bosque de cenizas</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <script src="scripts.js"></script>
+    </body>
+</html>

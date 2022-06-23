@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    background-color: black;
+    font-family: "bronson";
+    
+}
+
+img {
+   max-width: 100%;
+}
+
+h1 {
+   color: #DE118EFF;
+   text-align: center;
+   font-size: 2rem;
+   font-family: "pixel";
+   
+}
+
+@font-face
+{
+   font-family: "pixel";
+   src: url(fonts/FFFFORWA.TTF) format("truetype");
+}
+
+@font-face {
+    font-family: "Bronson";
+    src: url(fonts/BronsonBlack-BWP1B.ttf) format("truetype"),
+        url(fonts/BronsonBlack-BWP1B.woff) format("woff");
+}
+
+.toggle-menu {
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   cursor: pointer;
+   filter: invert(1);
+   width: 40px;
+   z-index: 1;
+}
+
+.main-menu {
+   list-style: none;
+   margin-top: 0;
+   margin-bottom: 0;
+   padding-left: 0;
+
+   display: flex;
+   flex-direction: column;
+   align-items:center;
+   background-color: #342830;
+   transition: transform 0.3s;
+   transform: translateY(-100%);
+}
+
+.main-menu--show {
+   transform: translateY(0);
+}
+
+@media screen and (min-width: 768px) {
+   .main-menu {
+       flex-direction: row;
+       transform: translateY(0);
+   }
+}
+
+.main-menu_item {
+   padding: 1em;
+}
+
+
+.main-menu_link {
+   color: #DE118EFF;
+   text-transform: uppercase;
+   text-decoration: none;
+}
+
+.main-menu-logo {
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+   cursor: pointer;
+   width: 40px;
+   z-index: 1;
+}
+
+.relatos-item {
+    padding: 1em;
+}
+
+.relatos-link {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.text {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
