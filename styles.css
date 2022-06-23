@@ -55,14 +55,29 @@ h1 {
 
 .main-menu--show {
    transform: translateY(0);
+   
+}
+
+.title-show {
+    visibility: hidden;
 }
 
 @media screen and (min-width: 768px) {
    .main-menu {
        flex-direction: row;
        transform: translateY(0);
+       
    }
 }
+
+@media screen and (max-width: 768px) {
+    .title {
+        transform: translateY(-550%);
+        
+    }
+}
+  
+
 
 .main-menu_item {
    padding: 1em;
