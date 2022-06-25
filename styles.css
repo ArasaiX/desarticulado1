@@ -66,7 +66,9 @@ h1 {
    .main-menu {
        flex-direction: row;
        transform: translateY(0);
-       
+   }
+   .toggle-menu {
+       visibility: hidden;
    }
 }
 
@@ -76,7 +78,12 @@ h1 {
         
     }
     .subtitle {
-        transform: translateY(-10rem);
+        transform: translateY(-20rem);
+    }
+    .logo {
+        width: 15em;
+        margin: auto; 
+        transform: translateY(-20em);
     }
 }
   
@@ -120,7 +127,7 @@ h1 {
     width: 15em;
     margin: auto; 
     display: block;
-    transform: translateY(-15rem);
+    
 }
 
 .logo-show {
