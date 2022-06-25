@@ -10,7 +10,7 @@ img {
 }
 
 h1 {
-   color: #DE118EFF;
+   color: black;
    text-align: center;
    font-size: 2rem;
    font-family: "pixel";
@@ -72,8 +72,11 @@ h1 {
 
 @media screen and (max-width: 768px) {
     .title {
-        transform: translateY(-550%);
+        transform: translateY(-20rem);
         
+    }
+    .subtitle {
+        transform: translateY(-10rem);
     }
 }
   
@@ -111,4 +114,36 @@ h1 {
 .text {
     font-family: 'Courier New', Courier, monospace;
     color: black;
+}
+
+.logo {
+    width: 15em;
+    margin: auto; 
+    display: block;
+    transform: translateY(-15rem);
+}
+
+.logo-show {
+    width: 15em;
+    margin: auto;
+    display: block;
+    transform: translateY(0);
+
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.text-a {
+    font-size: small;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.text {
+    font-size: small;
+    margin-left: 10%;
+    margin-right: 10%;
 }
