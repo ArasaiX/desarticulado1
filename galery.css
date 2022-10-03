@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 5px;
+}
+
+img:first{
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+   cursor: pointer;
+   width: 40px;
+   z-index: 1;
+}
+
+
+
+img {
+    width: 300px; !important
+    height: 200px; !important;
+    margin: 20px; !important
+}

@@ -6,7 +6,7 @@
 			<!-- Permite carácteres extraños del alfabeto americano: ñ, á, é... -->
 			<meta charset="utf-8">
 			<!--Título que aparecerá en la pestaña - La estructura será el nombre de la página actual + Descripción del sitio-->
-			<title>About</title>
+			<title>Sobre mí</title>
 			<!-- Icono que acompañará al title. También será el icono que se guardará a la hora de que hagan un marcador. Se recomienda un tamaño de 32x32 y en PNG	-->
 			<link rel="shortcut icon" type="image/gif" href="images/logo.gif">
 			<!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en general -->
@@ -82,7 +82,7 @@
                     <a href="dibujos.html" class="main-menu_link">Dibujos</a>
                 </li>
                 <li class="main-menu_item">
-                    <a href="about.html" class="main-menu_link">About</a>
+                    <a href="about.html" class="main-menu_link">Sobre mí</a>
                 </li>
                 <li class="main-menu_item">
                     <a href="index.html" class="main-menu_link">Inicio</a>
@@ -92,27 +92,145 @@
         <nav class="main">
             <div id="title" class="title">
                 <h1>
-                    ???
+                    
+                    Sobre mí
                 </h1>
             </div>
             <div>
                 <img src="images/portada.jpg" alt="portada" style="height:40%; width:40%;display: block;margin: auto;">
             </div>
             <br><br><br>
-            <div id="text" class="text">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                     reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <button id="buttonColor">Contrast</button>
+            <div  class="text-a">
+                <p>Este es el apartado más aburrido de toda la web. En los otros apartados hay sexo, drogas, extraterrestres, ciencia ficción, crudeza, fantasía y suciedad. Así que pasa de acabar de leer esto.</p>
+                <br><p>Siempre quise ser escritor, y aquí estoy. Este es el tercer borrador para este apartado. Me cuesta escribir sobre mí explícitamente, sin ficción ni artefacto de por medio. Así que paso, no lo voy a hacer. Tampoco es tan importante saber quien o que soy yo ¿no? </p>
+                <br><p>Dicen que hay que separar a la persona del artista. Y quizás hay algo que une a los cotillas y a los sádicos. Una especie de sed que no estoy dispuesto a saciar del todo. Pero te diré que soy por fuera sólo un reflejo de lo que soy dentro. Me conoceréis más por mis textos y dibujos que por lo que os pueda decir sobre mí. </p>
+                <p>Aunque una mano amiga ha intervenido aquí para decir que en Desarticulado hay una persona muy real, imaginativa, sexual y despierta. Un chico con algún que otro rasgo astral, además de trabajador, guapo, bizarro. </p>
+                 <p>"Está para comérselo".</p><br><p>Pero bueno después de todo lo que he vomitado ya, aprovecho este espacio para pedir y no robarte más tiempo.
+                Así que si te gusta lo que hay por aquí puedes darme algo de dinero, no sé en que lo gastaré, pero te lo agradeceré.
+                Y lo más importante para mí, si crees que a alguien le puede gustar lo que hago, pásaselo joder y que lo disfrute.
                 </p>
             </div>
-            <div>
+            <br>
+            <br>
+            <div id="smart-button-container">
+                <div style="text-align: center; "><label for="description"> Dime algo </label><input type="text" name="descriptionInput" id="description" maxlength="127" value=""></div>
+                  <p id="descriptionError" style="visibility: hidden; color:black; text-align: center;">Please enter a description</p>
+                <div style="text-align: center;"><label for="amount"> Dame algo </label><input name="amountInput" type="number" id="amount" value="" ><span> EUR</span></div>
+                  <p id="priceLabelError" style="visibility: hidden; color:black; text-align: center;">Please enter a price</p>
+                <div id="invoiceidDiv" style="text-align: center; display: none;"><label for="invoiceid"> </label><input name="invoiceid" maxlength="127" type="text" id="invoiceid" value="" ></div>
+                  <p id="invoiceidError" style="visibility: hidden; color:black; text-align: center;">Please enter an Invoice ID</p>
+                <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
+              </div>
+              <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
+              <script>
+              function initPayPalButton() {
+                var description = document.querySelector('#smart-button-container #description');
+                var amount = document.querySelector('#smart-button-container #amount');
+                var descriptionError = document.querySelector('#smart-button-container #descriptionError');
+                var priceError = document.querySelector('#smart-button-container #priceLabelError');
+                var invoiceid = document.querySelector('#smart-button-container #invoiceid');
+                var invoiceidError = document.querySelector('#smart-button-container #invoiceidError');
+                var invoiceidDiv = document.querySelector('#smart-button-container #invoiceidDiv');
             
-            </div>
+                var elArr = [description, amount];
+            
+                if (invoiceidDiv.firstChild.innerHTML.length > 1) {
+                  invoiceidDiv.style.display = "block";
+                }
+            
+                var purchase_units = [{"amount":{"currency_code":"EUR","value":1,"breakdown":{"item_total":{"currency_code":"EUR","value":1}}},"items":[{"name":"item name","unit_amount":{"currency_code":"EUR","value":1},"quantity":"1","category":"DONATION"}]}]
+            
+                function validate(event) {
+                  return event.value.length > 0;
+                }
+            
+                paypal.Buttons({
+                  style: {
+                    color: 'black',
+                    shape: 'rect',
+                    label: 'donate',
+                    layout: 'vertical',
+                    
+                  },
+            
+                  onInit: function (data, actions) {
+                    actions.disable();
+            
+                    if(invoiceidDiv.style.display === "block") {
+                      elArr.push(invoiceid);
+                    }
+            
+                    elArr.forEach(function (item) {
+                      item.addEventListener('keyup', function (event) {
+                        var result = elArr.every(validate);
+                        if (result) {
+                          actions.enable();
+                        } else {
+                          actions.disable();
+                        }
+                      });
+                    });
+                  },
+            
+                  onClick: function () {
+                    if (description.value.length < 1) {
+                      descriptionError.style.visibility = "visible";
+                    } else {
+                      descriptionError.style.visibility = "hidden";
+                    }
+            
+                    if (amount.value.length < 1) {
+                      priceError.style.visibility = "visible";
+                    } else {
+                      priceError.style.visibility = "hidden";
+                    }
+            
+                    if (invoiceid.value.length < 1 && invoiceidDiv.style.display === "block") {
+                      invoiceidError.style.visibility = "visible";
+                    } else {
+                      invoiceidError.style.visibility = "hidden";
+                    }
+            
+                    purchase_units[0].description = description.value;
+                    purchase_units[0].amount.value = amount.value;
+                    purchase_units[0].amount.breakdown.item_total.value = amount.value;
+                    purchase_units[0].items[0].unit_amount.value = amount.value;
+            
+                    if(invoiceid.value !== '') {
+                      purchase_units[0].invoice_id = invoiceid.value;
+                    }
+                  },
+            
+                  createOrder: function (data, actions) {
+                    return actions.order.create({
+                      purchase_units: purchase_units,
+                    });
+                  },
+            
+                  onApprove: function (data, actions) {
+                    return actions.order.capture().then(function (orderData) {
+            
+                      // Full available details
+                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            
+                      // Show a success message within this page, e.g.
+                      const element = document.getElementById('paypal-button-container');
+                      element.innerHTML = '';
+                      element.innerHTML = '<h3>Thank you for your payment!</h3>';
+            
+                      // Or go to another URL:  actions.redirect('thank_you.html');
+                      
+                    });
+                  },
+            
+                  onError: function (err) {
+                    console.log(err);
+                  }
+                }).render('#paypal-button-container');
+              }
+              initPayPalButton();
+              </script>
         </nav>
         <script src="scripts.js"></script>
     </body>
