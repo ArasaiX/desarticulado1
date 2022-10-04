@@ -148,8 +148,14 @@ ul {
 }
 
 .text-a {
+    background-color: #DE118EFF;
+    color: black;
     font-family: 'Courier New', Courier, monospace;
-    font-size:1vw;
+    font-size: medium;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: left;
+    text-justify: auto;
 
 }
 
@@ -169,12 +175,10 @@ ul {
 }
 
 .textabout {
+    background-color: black;
+    color: #DE118EFF;
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
-    font-weight: bold;
-
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 button {
@@ -196,5 +200,9 @@ button {
     color: #DE118EFF;
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: left;
+    text-justify: auto;
 }
 
